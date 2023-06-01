@@ -11,15 +11,21 @@ public class FreeBoardService {
 	//DataBaseDriver driver = new MysqlDriver();
 	
 	private DataBaseDriver driver;
-
 	
-	public FreeBoardService() {}
-	public FreeBoardService(DataBaseDriver driver) {
+	public void setDriver(DataBaseDriver driver) {
 		this.driver = driver;
 	}
 	
 	public void insertBoard() {
 		driver.getConnection();
 	}
+
+	private int examScore; 
+	public void setExamScore(int score) {
+		this.examScore = score;
+		System.out.println("(freeBoardService) examScore: "
+				+ examScore);
+	}
+	
 	
 }
