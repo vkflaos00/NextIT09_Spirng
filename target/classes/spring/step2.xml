@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ 
+ 	<!-- DataBaseDriver driver = new OracleDriver(); -->
+ 	<bean id="driver" class="di.step2.dao.OracleDriver"></bean>
+ 	<!-- <bean id="driver" class="di.step2.dao.MysqlDriver"></bean> -->
+ 
+ 
+ 	<bean id="free" class="di.step2.service.FreeBoardService">
+ 		<constructor-arg>
+			<ref bean="driver"/> 		
+ 		</constructor-arg>
+ 	</bean>
+ 
+</beans>
